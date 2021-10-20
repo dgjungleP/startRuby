@@ -24,8 +24,8 @@ class Integer
   # end
 
   def my_times
+  self
     Array.new(self).fill { |i| i + 1 }.my_each { |e| yield(e - 1) }
-    self
   end
 end
 
