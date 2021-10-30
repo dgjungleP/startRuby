@@ -1,5 +1,5 @@
 class CpInfo
-
+  attr_accessor :tag, :info
 end
 
 class FieldInfo
