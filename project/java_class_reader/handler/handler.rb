@@ -23,7 +23,7 @@ class ConstantPoolReadHandler
     class_file.constant_pool_count = U2.new(buf.get, buf.get)
     count = class_file.constant_pool_count.to_i
     class_file.constant_pool = []
-    count.times do |index|
+    (count - 1).times do |index|
       tag = U1.new(buf.get)
       puts "This is the #{index} Constant, The Tage is #{tag.to_i}"
       cp_info = CpInfo.get_info(tag)
