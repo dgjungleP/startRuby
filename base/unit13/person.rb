@@ -7,6 +7,7 @@ person = Person.new
 person.name = "Jungle"
 
 puts person.name
+
 def person.name
   '[not avaliable]'
 end

@@ -3,7 +3,7 @@ module HexString
   attr_accessor :value
 
   def initialize(*value)
-    @value = value
+    @value = value.flatten
   end
 
   def toHexString
