@@ -54,9 +54,11 @@ class FieldInfo
 end
 
 class MethodInfo
+  attr_accessor :access_flages, :name_index, :descriptor_index, :attributes_count, :attributes
 end
 
 class AttributeInfo
+  attr_accessor :attribute_name_index, :attributeLength, :info
 end
 
 class ConstantClassInfo < CpInfo
