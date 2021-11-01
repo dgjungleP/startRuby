@@ -43,9 +43,14 @@ class CpInfo
       raise TypeError, "Can not find the Tag=#{tag.to_i} type"
     end
   end
+
+  def to_s
+    "tag=#{@tag.toHexString}"
+  end
 end
 
 class FieldInfo
+  attr_accessor :access_flages, :name_index, :descriptor_index, :attributes_count, :attributes
 end
 
 class MethodInfo
@@ -147,6 +152,12 @@ class ConstantUtf8Info < CpInfo
     @length = U2.new(buf.get_2)
     @bytes = []
     @length.to_i.times { @bytes << U1.new(buf.get) }
+  end
+
+  def to_s
+    pre = super
+    str = bytes.flat_map(&:value).pack('U*')
+    "#{pre},length=#{length.to_i},str=#{str}"
   end
 end
 

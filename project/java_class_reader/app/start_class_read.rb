@@ -10,3 +10,4 @@ puts class_file.magic.toHexString
 puts class_file.major_version.to_i
 puts class_file.minor_version.to_i
 puts class_file.constant_pool_count.to_i
+class_file.constant_pool.each { |value| puts value.to_s }
